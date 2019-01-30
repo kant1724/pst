@@ -1,5 +1,5 @@
-import predict.jaro_wrinkler as jaro_wrinkler
-import predict.custom_algorithm as custom_algorithm
+import algo.jaro_wrinkler as jaro_wrinkler
+import algo.custom_algorithm as custom_algorithm
 
 # jaro-wrinkler
 def jaroWrinkler(x, y):
