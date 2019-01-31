@@ -4,3 +4,7 @@
 의존 라이브러리 다운로드:
 
 pip install -r requirements.txt
+
+실행:
+
+python run.py
