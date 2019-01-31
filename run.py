@@ -4,10 +4,10 @@ from keras_lstm import run_keras
 import predict
 import util
 
-# 사용자 입력값 ('/data/input.txt')
+# 사용자 입력값 ('/data/test.txt')
 x = data.getInput()
 
-# 보이스피싱 텍스트(명사만), 단어별 가중치 ('/data/vp_text.txt', '/data/voca_data.txt')
+# 보이스피싱 텍스트(명사만), 단어별 가중치 ('/data/vp.txt', '/data/voca.txt')
 nouns, vocaWeight = data.getData()
 
 #train_keras.train()

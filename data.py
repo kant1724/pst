@@ -39,7 +39,7 @@ def extractNouns(pos, vocaWeight):
 def getInput():
     vocaWeight = getVocaWeight()
     data = []
-    with open(os.path.join('./data/input.txt'), 'r', encoding='utf8') as f:
+    with open(os.path.join('./data/test.txt'), 'r', encoding='utf8') as f:
         lines = f.readlines()
         for line in lines:
             d = extractNouns(pos(line), vocaWeight)
@@ -51,7 +51,7 @@ def getInput():
 def getKerasTestData():
     vocaWeight = getVocaWeight()
     data = []
-    with open(os.path.join('./data/input.txt'), 'r', encoding='utf8') as f:
+    with open(os.path.join('./data/test.txt'), 'r', encoding='utf8') as f:
         lines = f.readlines()
         for line in lines:
             d = extractNouns(pos(line), vocaWeight)
@@ -62,7 +62,7 @@ def getKerasTestData():
 def getData():
     vocaWeight = getVocaWeight()
     data = []
-    with open(os.path.join('./data/vp_text.txt'), 'r', encoding='utf8') as f:
+    with open(os.path.join('./data/vp.txt'), 'r', encoding='utf8') as f:
         lines = f.readlines()
         for line in lines:
             d = extractNouns(pos(line), vocaWeight)
@@ -74,7 +74,7 @@ def getData():
 def getKerasVpData():
     vocaWeight = getVocaWeight()
     data = []
-    with open(os.path.join('./data/vp_text.txt'), 'r', encoding='utf8') as f:
+    with open(os.path.join('./data/vp.txt'), 'r', encoding='utf8') as f:
         lines = f.readlines()
         for line in lines:
             d = extractNouns(pos(line), vocaWeight)
@@ -85,7 +85,7 @@ def getKerasVpData():
 def getKerasNormalData():
     vocaWeight = getVocaWeight()
     data = []
-    with open(os.path.join('./data/normal_text.txt'), 'r', encoding='utf8') as f:
+    with open(os.path.join('./data/normal.txt'), 'r', encoding='utf8') as f:
         lines = f.readlines()
         for line in lines:
             d = extractNouns(pos(line), vocaWeight)
@@ -110,7 +110,7 @@ def getKerasTrainingData():
 
 def getVocaWeight():
     vocaWeight = {}
-    with open(os.path.join('./data/voca_data.txt'), 'r', encoding='utf8') as f:
+    with open(os.path.join('./data/voca.txt'), 'r', encoding='utf8') as f:
         lines = f.readlines()
         for line in lines:
             v = line.split("^")
