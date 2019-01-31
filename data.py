@@ -48,6 +48,17 @@ def getInput():
 
     return data[0]
 
+def getKerasTestData():
+    vocaWeight = getVocaWeight()
+    data = []
+    with open(os.path.join('./data/input.txt'), 'r', encoding='utf8') as f:
+        lines = f.readlines()
+        for line in lines:
+            d = extractNouns(pos(line), vocaWeight)
+            data.append(d)
+
+    return data
+
 def getData():
     vocaWeight = getVocaWeight()
     data = []

@@ -1,5 +1,6 @@
 import data
-from keras_lstm import model
+from keras_lstm import train_keras
+from keras_lstm import run_keras
 import predict
 import util
 
@@ -9,7 +10,8 @@ x = data.getInput()
 # 보이스피싱 텍스트(명사만), 단어별 가중치 ('/data/vp_text.txt', '/data/voca_data.txt')
 nouns, vocaWeight = data.getData()
 
-model.runKeras()
+#train_keras.train()
+run_keras.run()
 
 
 '''

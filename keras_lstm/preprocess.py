@@ -29,14 +29,14 @@ def initialize_vocabulary():
             lines2 = f2.readlines()
             for i in range(len(lines1)):
                 enc = lines1[i].replace("\n", "")
-                dec = lines2[i].replace("\n", "")
+                dec = int(lines2[i].replace("\n", ""))
                 voca[enc] = dec
     return voca
 
 def sentence_to_token_ids(sentence, vocabulary):
     words = sentence
 
-    return [str(vocabulary.get(w, 0)) for w in words]
+    return [vocabulary.get(w, 0) for w in words]
 
 def data_to_token_ids(train_arr):
     vocab = initialize_vocabulary()
@@ -64,3 +64,7 @@ def prepare_custom_data():
             f.write(str(ids) + "\n")
 
     return train_ids
+
+def process_test_data(test_arr):
+    test_ids = data_to_token_ids(test_arr)
+    return test_ids
