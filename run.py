@@ -25,4 +25,4 @@ for n in nouns:
 # 커스텀 알고리즘
 result2 = 0
 for n in nouns:
-    result2 = max(result2, predict.customAlgorithm(util.wordArray(x), util.wordArray(n)), vocaWeight)
+    result2 = max(result2, predict.customAlgorithm(util.wordArray(x), util.wordArray(n), vocaWeight))
