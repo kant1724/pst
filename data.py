@@ -60,6 +60,43 @@ def getData():
 
     return data, vocaWeight
 
+def getKerasVpData():
+    vocaWeight = getVocaWeight()
+    data = []
+    with open(os.path.join('./data/vp_text.txt'), 'r', encoding='utf8') as f:
+        lines = f.readlines()
+        for line in lines:
+            d = extractNouns(pos(line), vocaWeight)
+            data.append(d)
+
+    return data, vocaWeight
+
+def getKerasNormalData():
+    vocaWeight = getVocaWeight()
+    data = []
+    with open(os.path.join('./data/normal_text.txt'), 'r', encoding='utf8') as f:
+        lines = f.readlines()
+        for line in lines:
+            d = extractNouns(pos(line), vocaWeight)
+            data.append(d)
+
+    return data, vocaWeight
+
+def getKerasTrainingData():
+    x_data = []
+    y_data = []
+    with open(os.path.join('./keras_lstm/data/training_data.txt'), 'r', encoding='utf8') as f:
+        lines = f.readlines()
+        for line in lines:
+            x_data.append(eval(line.replace('\n', '')))
+
+    with open(os.path.join('./keras_lstm/data/label.txt'), 'r', encoding='utf8') as f:
+        lines = f.readlines()
+        for line in lines:
+            y_data.append(int(line.replace('\n', '')))
+
+    return x_data, y_data
+
 def getVocaWeight():
     vocaWeight = {}
     with open(os.path.join('./data/voca_data.txt'), 'r', encoding='utf8') as f:

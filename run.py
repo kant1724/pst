@@ -1,4 +1,5 @@
 import data
+from keras_lstm import model
 import predict
 import util
 
@@ -8,6 +9,10 @@ x = data.getInput()
 # 보이스피싱 텍스트(명사만), 단어별 가중치 ('/data/vp_text.txt', '/data/voca_data.txt')
 nouns, vocaWeight = data.getData()
 
+model.runKeras()
+
+
+'''
 # JARO_WRINKLER
 result = 0
 for n in nouns:
@@ -16,4 +21,5 @@ for n in nouns:
 # 커스텀 알고리즘 (구현해야 할 부분)
 result2 = 0
 for n in nouns:
-    result2 = max(result2, predict.customAlgorithm(util.wordArray(x), util.wordArray(n)))
+    result2 = max(result2, predict.customAlgorithm(util.wordArray(x), util.wordArray(n)), vocaWeight)
+'''

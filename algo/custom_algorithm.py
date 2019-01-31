@@ -1,2 +1,2 @@
-def get(x, y):
+def get(x, y, vocaWeight):
     return 0.0
